@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mua.mapper.BookMapper">
+
+    <resultMap id="BaseResultMap" type="com.mua.entity.BookEntity">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="bookName" column="book_name" jdbcType="VARCHAR"/>
+        <result property="authorName" column="author_name" jdbcType="VARCHAR"/>
+        <result property="bookIntro" column="book_intro" jdbcType="VARCHAR"/>
+        <result property="bookType" column="book_type" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,book_name,author_name,
+        book_intro,book_type
+    </sql>
+    <select id="pageList" resultType="com.mua.entity.BookEntity">
+        select * from book where 1 = 1
+        <if test="entity.bookName != null and entity.bookName != ''">
+            and book_name like concat('%',#{entity.bookName},'%')
+        </if>
+        <if test="entity.authorName != null and entity.authorName != ''">
+            and author_name like concat('%',#{entity.authorName},'%')
+        </if>
+    </select>
+</mapper>
