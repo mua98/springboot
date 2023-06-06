@@ -6,15 +6,15 @@ spring:
   mail:
     host: smtp.qq.com # 配置 smtp 服务器地址
     port: 587 # smtp 服务器的端口
-    username: xxxxx@qq.com # 配置邮箱用户名(你的邮箱地址)
-    password: xxxxxxxxxxxxxx  # 配置申请到的授权码(刚让复制的授权码)
+    username: mua98@qq.com # 配置邮箱用户名(你的邮箱地址)
+    password: mznwmksuuabkdhjj  # 配置申请到的授权码(刚让复制的授权码)
     default-encoding: UTF-8 # 配置邮件编码
     properties:
       mail:
         debug: true
         smtp:
           socketFactoryClass: javax.net.ssl.SSLSocketFactory # 配饰 SSL 加密工厂
-    from: xxxxx@qq.com # 发送方邮件，陪在yml中可方便更改
+    from: mua98@qq.com # 发送方邮件，陪在yml中可方便更改
 
   servlet:
     multipart:
