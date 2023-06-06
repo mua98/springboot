@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  #发送邮件配置
+  mail:
+    host: smtp.qq.com # 配置 smtp 服务器地址
+    port: 587 # smtp 服务器的端口
+    username: xxxxx@qq.com # 配置邮箱用户名(你的邮箱地址)
+    password: xxxxxxxxxxxxxx  # 配置申请到的授权码(刚让复制的授权码)
+    default-encoding: UTF-8 # 配置邮件编码
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory # 配饰 SSL 加密工厂
+    from: xxxxx@qq.com # 发送方邮件，陪在yml中可方便更改
+
+  servlet:
+    multipart:
+      # 设置 上传文件的大小 默认时1MB
+      max-file-size: 1024MB
+      # 设置 整个请求的大小
+      max-request-size: 2048MB
